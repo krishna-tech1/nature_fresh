@@ -1,0 +1,369 @@
+.aboutHero {
+  position: relative;
+  height: calc(60vh - 80px);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+.aboutHeroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.established {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: var(--primary-color);
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.pursuitGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.fishImageWrapper {
+  position: relative;
+}
+
+.fishImage {
+  border-radius: 24px;
+  box-shadow: 0 30px 60px -12px rgba(0,0,0,0.2);
+}
+
+.quoteBox {
+  position: absolute;
+  bottom: -30px;
+  left: 30px;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  max-width: 250px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.quoteText {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-style: italic;
+}
+
+/* Timeline */
+.timelineSection {
+  text-align: center;
+}
+
+.timelineGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+  position: relative;
+}
+
+.timelineGrid::after {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: #e2e8f0;
+  z-index: -1;
+}
+
+.timelineItem {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.timelineDot {
+  width: 12px;
+  height: 12px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  margin: 0 auto 30px;
+  border: 4px solid white;
+  box-shadow: 0 0 0 4px #e0f2fe;
+}
+
+.timelineYear {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.timelineTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.timelineDesc {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Team */
+.teamSection {
+  background: #0b1120;
+  color: white;
+  padding: 80px 0;
+}
+
+.teamHeader {
+  margin-bottom: 40px;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.teamCard {
+  transition: transform 0.3s ease;
+}
+
+.teamCard:hover {
+  transform: translateY(-10px);
+}
+
+.teamImage {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.teamCard:hover .teamImage {
+  filter: grayscale(0%);
+}
+
+.memberName {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.memberRole {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* CTA */
+.ctaSection {
+  position: relative;
+  padding: 120px 0;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+}
+
+.ctaOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 17, 32, 0.7);
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* New Stats Style */
+.statsSection {
+  padding: 80px 0;
+  background: white;
+}
+
+.newStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.newStatItem {
+  border-left: 4px solid var(--primary-color);
+  padding-left: 24px;
+}
+
+.newStatItem h3 {
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--primary-color);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.newStatItem p {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Updated CTA */
+.ctaSectionNew {
+  position: relative;
+  padding: 80px 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctaOverlayNew {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 186, 207, 0.4), rgba(0, 56, 101, 0.6));
+}
+
+.ctaContentNew {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+}
+
+.ctaTitleNew {
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: white;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.ctaButtonsNew {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btnPrimary {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btnPrimary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btnOutline {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s;
+  backdrop-filter: blur(4px);
+}
+
+.btnOutline:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .pursuitGrid, .timelineGrid, .teamGrid, .newStatsGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .timelineGrid::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutHero {
+    height: auto;
+    padding: 100px 0;
+  }
+  
+  .ctaTitleNew {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .ctaButtonsNew {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ctaButtonsNew button {
+    width: 100%;
+  }
+
+  .newStatItem h3 {
+    font-size: 40px;
+  }
+
+  .timelineItem {
+    padding: 30px 20px;
+  }
+
+  .teamImage {
+    height: 300px;
+  }
+}

@@ -1,0 +1,243 @@
+.contactSection {
+  padding: 80px 0;
+  background-color: var(--white);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.contactInfo {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.preTitle {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--dark-bg);
+  line-height: 1.2;
+  margin-bottom: 48px;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.infoLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.infoValue {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark-bg);
+  line-height: 1.4;
+}
+
+.mapImage {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Form Styles */
+.formCard {
+  background: white;
+  border-radius: 20px;
+  padding: 48px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroupFull {
+  grid-column: 1 / -1;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input, .textarea {
+  padding: 16px 20px;
+  background-color: #f1f5f9;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 15px;
+  color: var(--dark-bg);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.input:focus, .textarea:focus {
+  background-color: white;
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 186, 207, 0.1);
+}
+
+.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #06b6d4 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 186, 207, 0.4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 992px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .formCard {
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .infoValue {
+    font-size: 16px;
+  }
+
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.charCount {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 4px;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.successIcon {
+  width: 72px;
+  height: 72px;
+  background-color: #f0fdf4;
+  color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.successMessage h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--dark-bg);
+  margin-bottom: 12px;
+}
+
+.successMessage p {
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.errorText {
+  color: #ef4444;
+  font-size: 13px;
+  margin-top: 12px;
+  text-align: center;
+}

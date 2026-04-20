@@ -1,0 +1,88 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Content {
+  id                Int      @id @default(1)
+  mainHeadline      String   @default("Nature Fresh Foods: Global Excellence in Export")
+  heroNarrative     String   @default("We bridge the gap between local sustainable farms and the global market...")
+  companyStory      String   @default("Founded in the heart of fertile valleys...")
+  missionStatement  String   @default("Our mission is to foster a sustainable global food system...")
+  yearsOfExperience Int      @default(24)
+  countriesServed   Int      @default(142)
+  tonnageExported   Int      @default(850)
+  heroAssetUrl      String   @default("https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2")
+  updatedAt         DateTime @updatedAt
+}
+
+model TeamMember {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  role      String
+  status    String   @default("Active")
+  photoUrl  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model BlogPost {
+  id        Int      @id @default(autoincrement())
+  title     String
+  category  String
+  author    String
+  content   String
+  imageUrl  String?
+  status    String   @default("Draft")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  category    String
+  images      String[]
+  status      String   @default("In Stock")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  quotes      Quote[]
+}
+
+model Quote {
+  id          Int      @id @default(autoincrement())
+  name        String
+  company     String
+  email       String
+  quantity    String
+  productId   Int
+  productName String
+  status      String   @default("Pending")
+  createdAt   DateTime @default(now())
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+model Inquiry {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  subject   String
+  message   String
+  status    String   @default("Pending")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
