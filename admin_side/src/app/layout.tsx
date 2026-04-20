@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import Topbar from "@/components/Topbar";
+import { Loader2 } from "lucide-react";
 
 export default function RootLayout({
   children,
@@ -63,10 +64,12 @@ export default function RootLayout({
           )}
 
           <div className="main-content-wrapper">
-            <Topbar onMenuClick={() => setIsSidebarOpen(true)} />
-            <main className="main-content">
-              {children}
-            </main>
+            <Suspense fallback={<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', width: '100%' }}><Loader2 className="animate-spin" size={48} color="#0ea5e9" /></div>}>
+              <Topbar onMenuClick={() => setIsSidebarOpen(true)} />
+              <main className="main-content">
+                {children}
+              </main>
+            </Suspense>
           </div>
         </div>
       </body>

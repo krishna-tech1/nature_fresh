@@ -41,7 +41,7 @@ router.post('/', async (req, res) => {
 router.patch('/:id/review', authenticate, async (req, res) => {
   try {
     const inquiry = await prisma.inquiry.update({
-      where: { id: parseInt(req.params.id) },
+      where: { id: parseInt(req.params.id as string) },
       data: { status: 'Reviewed' }
     });
     res.json(inquiry);
@@ -55,7 +55,7 @@ router.patch('/:id/review', authenticate, async (req, res) => {
 router.delete('/:id', authenticate, async (req, res) => {
   try {
     await prisma.inquiry.delete({
-      where: { id: parseInt(req.params.id) }
+      where: { id: parseInt(req.params.id as string) }
     });
     res.json({ message: 'Inquiry deleted successfully' });
   } catch (error) {

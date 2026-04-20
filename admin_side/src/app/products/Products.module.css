@@ -283,31 +283,30 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
   z-index: 1000;
-  padding: 24px;
+  overflow-y: auto; /* Scroll bar on the overlay */
+  padding: 0 20px; /* Horizontal padding for mobile */
 }
 
 .modal {
   background: white;
   width: 100%;
-  max-width: 800px;
-  border-radius: 24px;
-  padding: 40px;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  max-width: 650px;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  /* Horizontally center, and add top/bottom space so it never touches screen edges */
+  margin: 60px auto; 
 }
 
 .modalHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 32px;
+  margin-bottom: 24px; /* Reduced gap */
 }
 
 .modalTitle {
@@ -344,13 +343,13 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px; /* Tighter vertical flow */
 }
 
 .formGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 20px;
 }
 
 .formGroup {
@@ -529,4 +528,10 @@
   .modalActions button {
     width: 100%;
   }
+}
+
+.charCount {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
 }

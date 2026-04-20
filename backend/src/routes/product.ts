@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const product = await prisma.product.findUnique({ where: { id: parseInt(req.params.id) } });
+    const product = await prisma.product.findUnique({ where: { id: parseInt(req.params.id as string) } });
     if (!product) return res.status(404).json({ error: 'Product not found' });
     res.json(product);
   } catch (error) {
@@ -38,7 +38,7 @@ router.post('/', authenticate, async (req, res) => {
 router.put('/:id', authenticate, async (req, res) => {
   try {
     const updatedProduct = await prisma.product.update({
-      where: { id: parseInt(req.params.id) },
+      where: { id: parseInt(req.params.id as string) },
       data: req.body,
     });
     res.json(updatedProduct);
@@ -49,7 +49,7 @@ router.put('/:id', authenticate, async (req, res) => {
 
 router.delete('/:id', authenticate, async (req, res) => {
   try {
-    await prisma.product.delete({ where: { id: parseInt(req.params.id) } });
+    await prisma.product.delete({ where: { id: parseInt(req.params.id as string) } });
     res.json({ message: 'Deleted successfully' });
   } catch (error) {
     res.status(500).json({ error: 'Failed to delete product' });

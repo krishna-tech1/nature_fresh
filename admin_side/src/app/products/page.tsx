@@ -130,8 +130,9 @@ function ProductsContent() {
   const categories = ['All Items', 'Fish', 'Shrimp', 'Other'];
 
   return (
-    <div className={`${styles.container} animate-fade-in`}>
-      <div className={styles.header}>
+    <>
+      <div className={`${styles.container} animate-fade-in`}>
+        <div className={styles.header}>
         <div>
           <p className={styles.subtitle}>INVENTORY MANAGEMENT</p>
           <h1 className={styles.title}>Product Catalog</h1>
@@ -235,9 +236,10 @@ function ProductsContent() {
           </table>
         </div>
       </div>
+    </div>
 
-      {showModal && (
-        <div className={styles.modalOverlay} onClick={() => setShowModal(false)}>
+    {showModal && (
+      <div className={styles.modalOverlay} onClick={() => setShowModal(false)}>
           <div className={styles.modal} onClick={e => e.stopPropagation()}>
             <div className={styles.modalHeader}>
               <div>
@@ -342,7 +344,7 @@ function ProductsContent() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
 

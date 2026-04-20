@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
 router.patch('/:id/review', authenticate, async (req, res) => {
   try {
     const quote = await prisma.quote.update({
-      where: { id: parseInt(req.params.id) },
+      where: { id: parseInt(req.params.id as string) },
       data: { status: 'Reviewed' }
     });
     res.json(quote);
@@ -50,7 +50,7 @@ router.patch('/:id/review', authenticate, async (req, res) => {
 // DELETE a quote (PROTECTED)
 router.delete('/:id', authenticate, async (req, res) => {
   try {
-    await prisma.quote.delete({ where: { id: parseInt(req.params.id) } });
+    await prisma.quote.delete({ where: { id: parseInt(req.params.id as string) } });
     res.json({ message: 'Deleted successfully' });
   } catch (error) {
     res.status(500).json({ error: 'Failed to delete quote' });
