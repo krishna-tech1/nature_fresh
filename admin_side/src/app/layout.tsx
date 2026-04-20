@@ -13,6 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isAuthChecked, setIsAuthChecked] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
   const isLoginPage = pathname === "/login";
@@ -21,8 +22,23 @@ export default function RootLayout({
     const token = localStorage.getItem('adminToken');
     if (!token && !isLoginPage) {
       router.push('/login');
+    } else {
+      setIsAuthChecked(true);
     }
   }, [pathname, isLoginPage, router]);
+
+  // Prevent flash: If we are not on the login page and haven't checked auth yet, show a full-screen loader
+  if (!isAuthChecked && !isLoginPage) {
+    return (
+      <html lang="en">
+        <body>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', width: '100vw', background: '#f8fafc' }}>
+            <Loader2 className="animate-spin" size={48} color="#0ea5e9" />
+          </div>
+        </body>
+      </html>
+    );
+  }
 
   if (isLoginPage) {
     return (
