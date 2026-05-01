@@ -22,15 +22,22 @@ const supplyCountries = [
   "Thailand", "United Arab Emirates", "Ireland", "Belgium"
 ];
 
+interface GeoFeature {
+  rsmKey: string;
+  properties: {
+    name: string;
+  };
+}
+
 const MapSection = () => {
   const [activeTab, setActiveTab] = useState<"procurement" | "supply">("procurement");
   const [tooltipContent, setTooltipContent] = useState("");
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
   const [position, setPosition] = useState({ coordinates: [20, 10], zoom: 1 });
-  const [isClient, setIsClient] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
+    setIsMounted(true);
   }, []);
 
   const handleZoomIn = () => {
@@ -62,7 +69,7 @@ const MapSection = () => {
     setTooltipPos({ x: event.clientX, y: event.clientY });
   };
 
-  if (!isClient) return null;
+  if (!isMounted) return null;
 
   return (
     <section className={styles.mapSection}>
@@ -119,8 +126,8 @@ const MapSection = () => {
                 ]}
               >
                 <Geographies geography={geoUrl}>
-                  {({ geographies }: { geographies: any[] }) =>
-                    geographies.map((geo: any) => {
+                  {({ geographies }: { geographies: GeoFeature[] }) =>
+                    geographies.map((geo: GeoFeature) => {
                       const highlighted = isHighlighted(geo.properties.name);
                       return (
                         <Geography
