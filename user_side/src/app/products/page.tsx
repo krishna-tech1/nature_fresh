@@ -36,7 +36,7 @@ export default function ProductsPage() {
     return matchesSearch && matchesCategory;
   });
 
-  const categories = ['All', 'Fish', 'Shrimp', 'Other'];
+  const categories = ['All', 'Fish', 'Shrimp', 'Salmon', 'Cephalopods', 'Crab & Lobster', 'Tuna'];
 
   return (
     <main>

@@ -127,7 +127,7 @@ function ProductsContent() {
     }
   };
 
-  const categories = ['All Items', 'Fish', 'Shrimp', 'Other'];
+  const categories = ['All Items', 'Fish', 'Shrimp', 'Salmon', 'Cephalopods', 'Crab & Lobster', 'Tuna'];
 
   return (
     <>
@@ -277,6 +277,10 @@ function ProductsContent() {
                   >
                     <option value="Fish">Fish</option>
                     <option value="Shrimp">Shrimp</option>
+                    <option value="Salmon">Salmon</option>
+                    <option value="Cephalopods">Cephalopods</option>
+                    <option value="Crab & Lobster">Crab & Lobster</option>
+                    <option value="Tuna">Tuna</option>
                     <option value="Other">Other</option>
                   </select>
                 </div>

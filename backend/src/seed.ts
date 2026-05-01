@@ -29,7 +29,7 @@ async function main() {
     {
       name: 'Yellowfin Tuna (Thunnus albacares)',
       description: 'Premium export-grade Yellowfin Tuna, sustainably caught and flash-frozen to maintain sashimi quality. Known for its deep red color and firm texture, our tuna is a favorite for high-end seafood distributors.',
-      category: 'Fish',
+      category: 'Tuna',
       images: [
         'https://images.unsplash.com/photo-1599058917233-33230f252601?auto=format&fit=crop&q=80&w=800',
         'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=800',
@@ -51,7 +51,7 @@ async function main() {
     {
       name: 'Blue Swimmer Crab',
       description: 'Sweet, tender meat from the best Blue Swimmer Crabs. Cleaned and prepared under strict hygiene standards for international markets. Ideal for retail and hospitality.',
-      category: 'Other',
+      category: 'Crab & Lobster',
       images: [
         'https://images.unsplash.com/photo-1551462147-37885acc3c41?auto=format&fit=crop&q=80&w=800',
         'https://images.unsplash.com/photo-1626200419199-341af157ce3e?auto=format&fit=crop&q=80&w=800',
@@ -73,7 +73,7 @@ async function main() {
     {
       name: 'Premium Cuttlefish',
       description: 'Tender and flavorful Cuttlefish, ideal for gourmet seafood dishes. Processed under strict HACCP standards for maximum freshness and texture integrity.',
-      category: 'Other',
+      category: 'Cephalopods',
       images: [
         'https://images.unsplash.com/photo-1582450871972-ab5ca641643d?auto=format&fit=crop&q=80&w=800',
         'https://images.unsplash.com/photo-1626645272637-8339c92cc548?auto=format&fit=crop&q=80&w=800',

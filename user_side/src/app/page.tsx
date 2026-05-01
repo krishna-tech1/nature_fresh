@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ShieldCheck, Truck, Globe, Handshake, CheckCircle2, Loader2, PackageSearch } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import MapSection from '@/components/MapSection';
 import styles from './page.module.css';
 import { API_BASE_URL, Product } from '@/lib/api';
 
@@ -143,36 +144,9 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Footprint Section */}
-      <section className="section">
-        <div className={`container ${styles.footprintGrid}`}>
-          <div className={`${styles.mapWrapper} animate-fade-up delay-100`}>
-            <Image src="/images/world-map.png" alt="Global Footprint Map" width={500} height={400} />
-          </div>
-          <div className="animate-fade-up delay-200">
-            <span className={styles.sectionPretitle}>GLOBAL FOOTPRINT</span>
-            <h2 className={styles.sectionTitle}>Scale Without Boundaries.</h2>
-            <div className={styles.statsGrid}>
-              <div className={styles.statItem}>
-                <h3>40+</h3>
-                <p>COUNTRIES SERVED</p>
-              </div>
-              <div className={styles.statItem}>
-                <h3>15k</h3>
-                <p>TONS EXPORTED / YR</p>
-              </div>
-              <div className={styles.statItem}>
-                <h3>25+</h3>
-                <p>YEARS OF EXPERTISE</p>
-              </div>
-              <div className={styles.statItem}>
-                <h3>100%</h3>
-                <p>COLD CHAIN INTEGRITY</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <MapSection />
 
       {/* Advantage Section */}
       <section className="section section-light">
