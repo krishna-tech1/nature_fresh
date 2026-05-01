@@ -27,22 +27,38 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', authenticate, async (req, res) => {
   try {
-    const newProduct = await prisma.product.create({ data: req.body });
+    const { name, description, category, images, status } = req.body;
+    
+    if (!name || !description || !category) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    const newProduct = await prisma.product.create({ 
+      data: { name, description, category, images, status } 
+    });
     res.json(newProduct);
   } catch (error) {
     console.error('[POST /products] Error:', error);
-    res.status(500).json({ error: 'Failed to create product' });
+    res.status(500).json({ error: 'Failed to create product. Database error.' });
   }
 });
 
 router.put('/:id', authenticate, async (req, res) => {
   try {
+    const { name, description, category, images, status } = req.body;
+    const id = parseInt(req.params.id as string);
+
+    if (isNaN(id)) {
+      return res.status(400).json({ error: 'Invalid product ID' });
+    }
+
     const updatedProduct = await prisma.product.update({
-      where: { id: parseInt(req.params.id as string) },
-      data: req.body,
+      where: { id },
+      data: { name, description, category, images, status },
     });
     res.json(updatedProduct);
   } catch (error) {
+    console.error('[PUT /products] Error:', error);
     res.status(500).json({ error: 'Failed to update product' });
   }
 });
