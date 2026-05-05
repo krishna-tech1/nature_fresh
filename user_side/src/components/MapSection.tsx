@@ -7,29 +7,28 @@ import styles from "./MapSection.module.css";
 
 const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-50m.json";
 
-// Unique explicit color for every procurement country
+// Premium, cohesive jewel-tone and earth palette
 const procurementColorMap: Record<string, string> = {
-  "India": "#FF6B6B",
-  "Sri Lanka": "#00BACF",
-  "Vietnam": "#F59E0B",
-  "Thailand": "#10B981",
-  "Indonesia": "#6366F1",
-  "United Arab Emirates": "#EC4899",
-  "Oman": "#F97316",
-  "Bahrain": "#8B5CF6",
-  "Qatar": "#14B8A6",
+  "India": "#ec6810ff",         // Royal Blue
+  "Sri Lanka": "#f0ed4aff",     // Brand Cyan
+  "Vietnam": "#10B981",       // Vivid Emerald
+  "Thailand": "#2010fdff",      // Rich Amber
+  "Indonesia": "#8B5CF6",     // Soft Violet
+  "United Arab Emirates": "#EC4899", // Vibrant Pink
+  "Oman": "#F43F5E",          // Rose Red
+  "Bahrain": "#a08e2bff",       // Deep Teal
+  "Qatar": "#04033bff",         // Golden Yellow
 };
 
-// Unique explicit color for every supply country
 const supplyColorMap: Record<string, string> = {
-  "United States": "#FF6B6B",
-  "United Kingdom": "#00BACF",
-  "China": "#F59E0B",
-  "Vietnam": "#10B981",
-  "Thailand": "#6366F1",
-  "United Arab Emirates": "#EC4899",
-  "Ireland": "#F97316",
-  "Belgium": "#8B5CF6",
+  "United States": "#238b63ff",
+  "United Kingdom": "#5bce44ff",
+  "China": "#9187ccff",
+  "Vietnam": "#F59E0B",
+  "Thailand": "#74220ac9",
+  "United Arab Emirates": "#ec489a75",
+  "Ireland": "#f0062dff",
+  "Belgium": "#977bdaff",
 };
 
 // Normalize country names from geo data to our keys
